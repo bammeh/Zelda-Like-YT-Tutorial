@@ -47,7 +47,7 @@ public class Sign : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            dialogBox.SetActive(false); // if we leave teh collider, close the dialog box
+            dialogBox.SetActive(false); // if we leave the collider, close the dialog box
         }
     }
 }

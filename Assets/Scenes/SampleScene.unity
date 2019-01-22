@@ -2452,7 +2452,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.97, y: -14.72, z: -0.62}
+  m_LocalPosition: {x: 14.28, y: -14.72, z: -0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7429,7 +7429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1393392243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8137,7 +8137,7 @@ MonoBehaviour:
   dialogBox: {fileID: 811641610}
   dialogText: {fileID: 1393392244}
   dialog: Pond ahead
-  dialogActive: 1
+  playerInRange: 0
 --- !u!1001 &8760465627133371777
 PrefabInstance:
   m_ObjectHideFlags: 0
