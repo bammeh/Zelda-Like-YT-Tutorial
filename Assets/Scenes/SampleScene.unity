@@ -7732,7 +7732,7 @@ GameObject:
   - component: {fileID: 1464793608}
   m_Layer: 0
   m_Name: Log (Enemy)
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7852,7 +7852,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464793604}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8107,6 +8107,7 @@ GameObject:
   - component: {fileID: 1821039302}
   - component: {fileID: 1821039306}
   - component: {fileID: 1821039305}
+  - component: {fileID: 1821039308}
   - component: {fileID: 1821039304}
   - component: {fileID: 1821039307}
   m_Layer: 0
@@ -8262,6 +8263,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1821039308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821039301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d100c77a863be45a3b6aef798e5af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thrust: 5
+  knockTime: 0.4
 --- !u!1 &1844494241
 GameObject:
   m_ObjectHideFlags: 0
