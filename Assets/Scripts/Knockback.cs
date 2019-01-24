@@ -15,7 +15,8 @@ public class Knockback : MonoBehaviour
             Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
             if (enemy != null)
             {
-                enemy.isKinematic = false; 
+                enemy.GetComponent<Enemy>().currentState = EnemyState.stagger; // set state to stagger
+
                 Vector2 difference = enemy.transform.position - transform.position; // get difference between my center point and enemy centerpoint
                 difference = difference.normalized * thrust; // Turing in vector with length of 1.
                 enemy.AddForce(difference, ForceMode2D.Impulse); // add instant force to enemy.
@@ -30,7 +31,7 @@ public class Knockback : MonoBehaviour
         {
             yield return new WaitForSeconds(knockTime); // Sets max time for knock to occur before starts chargin towards player again.
             enemy.velocity = Vector2.zero;//Stop enemy from moving.
-            enemy.isKinematic = true; //Stops it from being able to push player around.
+            enemy.GetComponent<Enemy>().currentState = EnemyState.idle; //set enemy back to idle
         }
     }
 }
