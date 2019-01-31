@@ -20,6 +20,6 @@ public class SignalListener : MonoBehaviour
 
     private void OnDisable()
     {
-        signal.DeregisterListener(this); // Remove listener (saves memory).
+        signal.DeRegisterListener(this); // Remove listener (saves memory).
     }
 }
