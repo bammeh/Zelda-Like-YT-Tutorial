@@ -33,10 +33,48 @@ public class Log : Enemy // Transfers inheritance from Enemy
             if (currentState == EnemyState.idle || currentState == EnemyState.walk && currentState != EnemyState.stagger)
             {
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+
+                ChangeAnim(temp - transform.position); //gets amount of movement thats actually happening.
                 myRigidbody.MovePosition(temp);
                 ChangeState(EnemyState.walk);//If in range, walk.
+                anim.SetBool("wakeUp", true); // Set wakeup bool for animation to true.
             }
+        }
+        else if(Vector3.Distance(target.position, transform.position) > chaseRadius) // Is distance greater than chaseRadius?
+        {
+            anim.SetBool("wakeUp", false);
+        }
+    }
 
+    private void SetAnimFloat(Vector2 setVector)
+    {
+        anim.SetFloat("moveX", setVector.x);
+        anim.SetFloat("moveY", setVector.y);
+    }
+
+    private void ChangeAnim(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if(direction.x > 0) // If going right
+            {
+                SetAnimFloat(Vector2.right);
+            }
+            else if (direction.x < 0) // if going left
+            {
+                SetAnimFloat(Vector2.left);
+            }
+        }
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0) // If going up
+            {
+                SetAnimFloat(Vector2.up);
+            }
+            else if (direction.y < 0) // if going down
+            {
+                SetAnimFloat(Vector2.down);
+            }
         }
     }
 
