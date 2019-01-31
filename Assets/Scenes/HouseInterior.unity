@@ -4200,6 +4200,23 @@ PrefabInstance:
       propertyPath: playerPosition.y
       value: -8.6
       objectReference: {fileID: 0}
+    - target: {fileID: 8490434006773092539, guid: af009f95994361742a541cbd62cd7cc4,
+        type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 3836362358079241467, guid: 7abbafddf781aef4c99823cc27aa73b2,
+        type: 3}
+    - target: {fileID: 8490434006773092539, guid: af009f95994361742a541cbd62cd7cc4,
+        type: 3}
+      propertyPath: fadeOutPanel
+      value: 
+      objectReference: {fileID: 1208863950882859180, guid: 360ad3bbbd1ec28498d8b6e10d21bc16,
+        type: 3}
+    - target: {fileID: 8490434006773092539, guid: af009f95994361742a541cbd62cd7cc4,
+        type: 3}
+      propertyPath: fadeWait
+      value: 0.33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af009f95994361742a541cbd62cd7cc4, type: 3}
 --- !u!1 &1639052502
@@ -5019,26 +5036,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2245046552119235980, guid: ba96970812d464f468e3ac3b2927ae0f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 127.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2245046552119235980, guid: ba96970812d464f468e3ac3b2927ae0f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -83.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2245046552119235980, guid: ba96970812d464f468e3ac3b2927ae0f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 179.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2245046552119235980, guid: ba96970812d464f468e3ac3b2927ae0f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 134.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba96970812d464f468e3ac3b2927ae0f, type: 3}

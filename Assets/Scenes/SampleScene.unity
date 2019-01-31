@@ -12541,7 +12541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.84, y: -14.8, z: -0.62}
+  m_LocalPosition: {x: 13, y: -13, z: -0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12691,6 +12691,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2a863510a004a5c48987064587587ac8,
         type: 2}
+    - target: {fileID: 8490434006773092539, guid: af009f95994361742a541cbd62cd7cc4,
+        type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 3836362358079241467, guid: 7abbafddf781aef4c99823cc27aa73b2,
+        type: 3}
+    - target: {fileID: 8490434006773092539, guid: af009f95994361742a541cbd62cd7cc4,
+        type: 3}
+      propertyPath: fadeOutPanel
+      value: 
+      objectReference: {fileID: 1208863950882859180, guid: 360ad3bbbd1ec28498d8b6e10d21bc16,
+        type: 3}
+    - target: {fileID: 8490434006773092539, guid: af009f95994361742a541cbd62cd7cc4,
+        type: 3}
+      propertyPath: fadeWait
+      value: 0.33
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af009f95994361742a541cbd62cd7cc4, type: 3}
 --- !u!1 &626086050 stripped
@@ -53910,12 +53927,12 @@ PrefabInstance:
     - target: {fileID: 1221640438594263782, guid: cdf19559e15cf814099e942b530ffc30,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.97
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1221640438594263782, guid: cdf19559e15cf814099e942b530ffc30,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.72
+      value: -13
       objectReference: {fileID: 0}
     - target: {fileID: 1221640438594263782, guid: cdf19559e15cf814099e942b530ffc30,
         type: 3}
