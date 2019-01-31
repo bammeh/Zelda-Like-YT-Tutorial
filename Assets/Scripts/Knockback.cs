@@ -6,6 +6,7 @@ public class Knockback : MonoBehaviour
 {
     public float thrust; // How much force should we knockback with?
     public float knockTime;
+    public float damage;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,10 +25,10 @@ public class Knockback : MonoBehaviour
                 difference = difference.normalized * thrust; // Turing in vector with length of 1.
                 hit.AddForce(difference, ForceMode2D.Impulse); // add instant force to enemy.
 
-                if (other.gameObject.CompareTag("enemy")) // if its an enemy
+                if (other.gameObject.CompareTag("enemy") && other.isTrigger) // if its an enemy
                 {
                     hit.GetComponent<Enemy>().currentState = EnemyState.stagger; // set state to stagger
-                    other.GetComponent<Enemy>().Knock(hit, knockTime); // begin knockback routine.
+                    other.GetComponent<Enemy>().Knock(hit, knockTime, damage); // begin knockback routine.
                 }
                 if (other.gameObject.CompareTag("Player")) // if its a player
                 {
