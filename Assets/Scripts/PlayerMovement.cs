@@ -6,7 +6,9 @@ public enum PlayerState // State Machine
 {
     walk,
     attack,
-    interact
+    interact,
+    stagger,
+    idle
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -33,11 +35,11 @@ public class PlayerMovement : MonoBehaviour
         change = Vector3.zero; // Set change to 0 each frame.
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");  
-        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack)
+        if (Input.GetButtonDown("attack") && currentState != PlayerState.attack && currentState != PlayerState.stagger)
         {
             StartCoroutine(AttackCo());
         }
-        else if (currentState == PlayerState.walk)
+        else if (currentState == PlayerState.walk || currentState == PlayerState.idle)
         {
             UpdateAnimationAndMove();
         }
@@ -74,5 +76,21 @@ public class PlayerMovement : MonoBehaviour
     {
         change.Normalize(); // Normalize the speed so we dont move 2x as fast diagonally.
         myRigidbody.MovePosition(transform.position + change * speed * Time.deltaTime); //Apply movement on the character. 
+    }
+
+    public void Knock(float knockTime)
+    {
+        StartCoroutine(KnockCo(knockTime));
+    }
+
+    private IEnumerator KnockCo( float knockTime)
+    {
+        if (myRigidbody != null)
+        {
+            yield return new WaitForSeconds(knockTime); // Sets max time for knock to occur before starts chargin towards player again.
+            myRigidbody.velocity = Vector2.zero;//Stop player from moving.
+            currentState = PlayerState.idle; //set player back to idle
+            myRigidbody.velocity = Vector2.zero;
+        }
     }
 }

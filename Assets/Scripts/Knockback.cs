@@ -8,30 +8,34 @@ public class Knockback : MonoBehaviour
     public float knockTime;
 
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("enemy"))// is this an enemy?
+        if (other.gameObject.CompareTag("breakable") && this.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D enemy = other.GetComponent<Rigidbody2D>();
-            if (enemy != null)
-            {
-                enemy.GetComponent<Enemy>().currentState = EnemyState.stagger; // set state to stagger
-
-                Vector2 difference = enemy.transform.position - transform.position; // get difference between my center point and enemy centerpoint
-                difference = difference.normalized * thrust; // Turing in vector with length of 1.
-                enemy.AddForce(difference, ForceMode2D.Impulse); // add instant force to enemy.
-                StartCoroutine(KnockCo(enemy));
-            }
+            other.GetComponent<Pot>().Smash(); //Smash pot
         }
-    }
 
-    private IEnumerator KnockCo(Rigidbody2D enemy)
-    {
-        if (enemy != null)
+        if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Player"))// is this an enemy or player?
         {
-            yield return new WaitForSeconds(knockTime); // Sets max time for knock to occur before starts chargin towards player again.
-            enemy.velocity = Vector2.zero;//Stop enemy from moving.
-            enemy.GetComponent<Enemy>().currentState = EnemyState.idle; //set enemy back to idle
+            Rigidbody2D hit = other.GetComponent<Rigidbody2D>(); // Get Rigidbody
+            if (hit != null)
+            {
+                Vector2 difference = hit.transform.position - transform.position; // get difference between my center point and enemy centerpoint
+                difference = difference.normalized * thrust; // Turing in vector with length of 1.
+                hit.AddForce(difference, ForceMode2D.Impulse); // add instant force to enemy.
+
+                if (other.gameObject.CompareTag("enemy")) // if its an enemy
+                {
+                    hit.GetComponent<Enemy>().currentState = EnemyState.stagger; // set state to stagger
+                    other.GetComponent<Enemy>().Knock(hit, knockTime); // begin knockback routine.
+                }
+                if (other.gameObject.CompareTag("Player")) // if its a player
+                {
+                    hit.GetComponent<PlayerMovement>().currentState = PlayerState.stagger;// set state to stagger
+                    other.GetComponent<PlayerMovement>().Knock(knockTime); // begin knockback routine.
+                }
+
+            }
         }
     }
 }
