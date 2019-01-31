@@ -81,11 +81,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void Knock(float knockTime, float damage)
     {
-        currentHealth.initialValue -= damage; // Deal damage
-        if (currentHealth.initialValue > 0) //Make sure we arent dead...
+        currentHealth.RuntimeValue -= damage; // Deal damage
+        if (currentHealth.RuntimeValue > 0) //Make sure we arent dead...
         {
             playerHealthSignal.Raise(); // Alert everything know we got hit.
             StartCoroutine(KnockCo(knockTime));
+        }
+        else
+        {
+            this.gameObject.SetActive(false); // Disable player on death.
         }
 
     }

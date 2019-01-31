@@ -148,7 +148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 175.4, y: -146.1}
+  m_AnchoredPosition: {x: 150.9, y: -124.3}
   m_SizeDelta: {x: 256, y: 192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46871908
@@ -171,7 +171,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300258, guid: a1fa92c680f996e4a9a465584031e9bf, type: 3}
+  m_Sprite: {fileID: 21300246, guid: b37fa73e9e865a74f88f71e174e65d09, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -203,7 +203,18 @@ MonoBehaviour:
   signal: {fileID: 11400000, guid: ac5269da6c74eb04bb4d219258442054, type: 2}
   signalEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1187596666}
+        m_MethodName: UpdateHearts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &329101359
@@ -8028,6 +8039,8 @@ MonoBehaviour:
   halfFullHeart: {fileID: 21300010, guid: a1fa92c680f996e4a9a465584031e9bf, type: 3}
   emptyHeart: {fileID: 21300014, guid: a1fa92c680f996e4a9a465584031e9bf, type: 3}
   heartContainers: {fileID: 11400000, guid: 86ba20d7460109945a33a2421802f509, type: 2}
+  playerCurrentHealth: {fileID: 11400000, guid: 871f51db539edcb4286167ad058c9890,
+    type: 2}
 --- !u!1 &1220122716
 GameObject:
   m_ObjectHideFlags: 0
@@ -8416,7 +8429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 3
   knockTime: 0.2
-  damage: 0
+  damage: 1
 --- !u!1 &1596022537
 GameObject:
   m_ObjectHideFlags: 0
@@ -8835,7 +8848,6 @@ GameObject:
   - component: {fileID: 1844494244}
   - component: {fileID: 1844494243}
   - component: {fileID: 1844494242}
-  - component: {fileID: 1844494246}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8925,35 +8937,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1844494246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1844494241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f5598536eebef4b934b11de4d4db57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal: {fileID: 0}
-  signalEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 46871906}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1904281119
 GameObject:
   m_ObjectHideFlags: 0
